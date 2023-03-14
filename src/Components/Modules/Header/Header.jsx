@@ -1,25 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import logo from "../../../assets/logo/dodas-logo.png";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-  const [dropdowndId, setDropdownsId] = useState("");
-
-  const hanldeCollapse = id => {
-    if (id === dropdowndId) {
-      setDropdownsId("");
-    } else {
-      setDropdownsId(id);
-    }
-  };
+  const router = useRouter();
+  
 
   return (
     <nav>
       <div className="px-4 w-full z-50  relative container mx-auto text-white items-center py-3 flex justify-around ">
         <div className="flex items-center  w-full  gap-10 lg:gap-x-24">
-          {/* <div className="w-24">
+          <div className="w-24">
             <Link href="/">
               <Image src={logo} className="w-full" alt="BHM Logo" />
             </Link>
@@ -46,14 +40,14 @@ const Header = () => {
               </svg>
             </span>
 
-          </div> */}
+          </div>
         </div>
 
         <ul className="flex gap-10 items-center justify-around pl-20">
           <li>
             <Link
-              href="#"
-              className="flex  text-lg hover:cursor-pointer text-[#1E1E1E]/50 hover:text-black items-center w-full  pl-3 pr-4 font-medium rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 md:w-auto"
+              href="/discover"
+              className={`flex  text-lg hover:cursor-pointer text-[#1E1E1E]/50 hover:text-black items-center w-full  pl-3 pr-4 font-medium rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 md:w-auto ${router.pathname === "/discover" ? "text-black" : "text-[#1E1E1E]/50"}`}
             >
              Discover
             </Link>
@@ -69,7 +63,7 @@ const Header = () => {
           <li>
             <Link
               href="/rewards"
-              className="flex  text-lg hover:cursor-pointer text-[#1E1E1E]/50 hover:text-black items-center w-full  pl-3 pr-4 font-medium rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 md:w-auto"
+              className={`flex  text-lg hover:cursor-pointer text-[#1E1E1E]/50 hover:text-black items-center w-full  pl-3 pr-4 font-medium rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 md:w-auto ${router.pathname === "/rewards" ? "text-black" : "text-[#1E1E1E]/50"}`}
             >
              Rewards
             </Link>
