@@ -6,7 +6,7 @@ import suggestedimg from "../../assets/images/suggestedimg.png";
 const Discover = () => {
   const card = (
     <>
-      <div class=" bg-white border border-gray-200 rounded-2xl shadow ">
+      <div className=" bg-white border border-gray-200 rounded-2xl shadow ">
         <Image src={suggestedimg} alt=""></Image>
         <div class="p-2">
           <h5 class="mb-2 text-2xl font-bold  text-gray-900 ">

@@ -2,10 +2,13 @@ import RewardLayout from "@/Components/Layouts/RewardLayout/RewardLayout";
 import Image from "next/image";
 import nftimg from "../../assets/images/nft.png";
 import avater from "../../assets/images/avater.png";
+import Link from "next/link";
 
 const Rewards = () => {
   const card = (
     <>
+      <Link href='/rewards/singlereward'>
+      
       <div className="relative bg-white border border-gray-200 rounded-2xl shadow ">
         <Image src={nftimg} className="w-full" alt=""></Image>
         <div class="p-3 text-end">
@@ -26,6 +29,7 @@ const Rewards = () => {
 
         <button type="button" class="text-black  absolute top-3 left-3  bg-white hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-1 mr-2 mb-2 ">NFT</button>
       </div>
+      </Link>
     </>
   );
 
